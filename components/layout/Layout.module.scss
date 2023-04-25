@@ -1,0 +1,14 @@
+@import "../../styles/sass/abstracts/variables";
+
+.Layout {
+    max-width: 145rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    margin: auto;
+    width: 90%;
+    flex: 1 0 auto;
+}
