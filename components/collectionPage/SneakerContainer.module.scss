@@ -1,0 +1,25 @@
+@import "../../styles/sass/abstracts/variables";
+
+.SneakerContainer {
+    margin-bottom: 5rem;
+}
+
+.SneakerContainerPath {
+    font-size: $font-size-s;
+    color: rgb(147, 147, 147);
+    padding-bottom: $margin-bottom-small;
+}
+
+.SneakerContainerTitle {
+    margin-bottom: $margin-bottom-medium;
+    padding-bottom: $margin-bottom-small;
+    border-bottom: 1px solid rgb(147, 147, 147);
+}
+
+.SneakerGrid {
+    // background-color: orange;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 3rem; 
+    justify-items: center;
+}

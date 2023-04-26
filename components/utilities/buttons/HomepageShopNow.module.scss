@@ -1,0 +1,22 @@
+@import "../../../styles/sass/abstracts/variables";
+
+.HomepageShopNow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.HomepageShopNowButton {
+    font-size: $font-size-default;
+    padding: 1.5rem 4rem;
+    background-color: transparent;
+    border: 1px solid black;
+    transition: .2s all
+}
+
+.HomepageShopNowButton:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-.5rem)
+}

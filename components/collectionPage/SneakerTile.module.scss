@@ -1,0 +1,18 @@
+@import "../../styles/sass/abstracts/variables";
+
+.SneakerTile {
+    font-size: $font-size-s;
+    text-align: center;
+    transition: all .2s;
+}
+
+.SneakerTile:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.SneakerTileImage {
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+}
