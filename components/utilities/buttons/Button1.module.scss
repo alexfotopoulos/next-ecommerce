@@ -1,12 +1,6 @@
 @import "../../../styles/sass/abstracts/variables";
 
-.HomepageShopNow {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5rem;
-}
-
-.HomepageShopNowButton {
+.Button1 {
     font-size: $font-size-default;
     padding: 1.5rem 4rem;
     background-color: transparent;
@@ -14,7 +8,7 @@
     transition: .2s all
 }
 
-.HomepageShopNowButton:hover {
+.Button1:hover {
     background-color: black;
     color: white;
     cursor: pointer;
