@@ -1,14 +1,104 @@
+@import "../../styles/sass/abstracts/variables";
+
 .Product {
-    background-color: grey;
+    // border: 2px solid blue;
     display: flex;
-    justify-content: space-around;
+    min-height: 40rem;
+    // justify-content: space-evenly;
+    margin-bottom: 5rem;
+}
+
+.ProductSection1 {
+    // background-color: palegoldenrod;
+    width: 50%;
+    min-width: 60rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ProductImage {
-    width: 40rem;
+    width: 80%;
+    object-fit: contain;
+}
+
+.ProductImageSelector {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: $margin-bottom-small
+}
+
+.ProductImagePreview {
+    // width: 100%;
+    // object-fit: cover;
 }
 
 .ProductSection2 {
-    background-color: palegoldenrod;
+    // background-color: paleturquoise
     width: 50%;
+    padding-left: 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductTitle {
+    margin-bottom: $margin-bottom-small;
+}
+
+.ProductPrice {
+    margin-bottom: $margin-bottom-medium;
+}
+
+.ProductForm {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ProductForm > div {
+    margin-bottom: $margin-bottom-small;
+}
+
+.ProductForm div label {
+    text-transform: uppercase;
+}
+
+.ProductForm select {
+    width: 90%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.Quantity {
+    height: 3.5rem;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.QuantityButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: .5px solid grey;
+    width: 3.5rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.QuantityInput {
+    height: 100%;
+    width: 6rem;
+    border-top: .5px solid grey;
+    border-bottom: .5px solid grey;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+.formSubmitButton {
+    margin-top: 1.5rem;
 }
