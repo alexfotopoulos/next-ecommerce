@@ -5,24 +5,31 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
+    //state to determine if navbar should be smaller width as user scrolls down
     const [isSmaller, setIsSmaller] = useState();
 
+    //useEffect to determine if navbar should be smaller at initial render
     useEffect(() => {
+        //if page is not at the top, navbar should be smaller
         if (window.pageYOffset > 0) {
-            setIsSmaller(true)
-        }
-    }, [])
+            setIsSmaller(true);
+        };
+    }, []);
 
+    //useEffect to add event listener to scroll to determine if navbar width should be smaller
     useEffect(() => {
         function handleScroll() {
-          if (window.pageYOffset === 0) {
-            setIsSmaller(false)
-          } else {
-            setIsSmaller(true)
-          }
-        }
-        window.addEventListener("scroll", handleScroll)
-      }, [])
+            //if page is at top, navbar should be standard width
+            if (window.pageYOffset === 0) {
+                setIsSmaller(false);
+            } else {
+                //if page is not at the top, navbar should be smaller
+                setIsSmaller(true);
+            }
+        };
+        //add event listener to scroll and determine navbar width
+        window.addEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <nav className={isSmaller ? styles.smallerNavbar : styles.Navbar}>
@@ -32,5 +39,5 @@ export default function Navbar() {
                 <ShoppingCartOutlinedIcon className={styles.cartIcon} />
             </div>
         </nav>
-    )
-}
+    );
+};

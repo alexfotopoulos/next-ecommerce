@@ -3,26 +3,32 @@ import styles from "./Product.module.scss";
 import { useState } from "react";
 
 export default function Product(props) {
+    //create state for which image will be primary image at a given moment
+    const [primaryImage, setPrimaryImage] = useState(props.shoe.images[0]);
+    //create state for current quantity of shoe selected
+    const [quantity, setQuantity] = useState(0);
 
-    const [primaryImage, setPrimaryImage] = useState(props.shoe.images[0])
-    const [quantity, setQuantity] = useState(0)
-
+    //handler function to set primary image as user clicks through alternate images
     function changeImageHandler(imageNumber) {
-        setPrimaryImage(props.shoe.images[imageNumber])
-    }
+        setPrimaryImage(props.shoe.images[imageNumber]);
+    };
 
+    //handler function to increment shoe quantity by one
     function incrementQtyHandler() {
-        setQuantity(prevQuantity => prevQuantity + 1)
-    }
+        setQuantity(prevQuantity => prevQuantity + 1);
+    };
 
+    ////handler function to increment shoe quantity by one
     function decrementQtyHandler() {
-        if (quantity === 0) return
-        setQuantity(prevQuantity => prevQuantity - 1)
-    }
+        //if quantity is already 0, return 0 to avoid negative number
+        if (quantity === 0) return;
+        setQuantity(prevQuantity => prevQuantity - 1);
+    };
 
+    //handler function to handle submit
     function submitHandler(e) {
         e.preventDefault();
-    }
+    };
 
     return (
         <div className={styles.Product}>
@@ -72,7 +78,7 @@ export default function Product(props) {
                         <label htmlFor="quantity">Quantity:</label>
                         <div className={styles.Quantity}>
                             <div className={styles.QuantityButton} onClick={decrementQtyHandler}>-</div>
-                            <input className={styles.QuantityInput} type="number" id="quantity" min="0" max="10" value={quantity} />
+                            <input className={styles.QuantityInput} type="number" id="quantity" min="0" max="10" defaultValue={quantity} />
                             <div className={styles.QuantityButton} onClick={incrementQtyHandler}>+</div>
                         </div>
                     </div>
@@ -82,5 +88,5 @@ export default function Product(props) {
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};

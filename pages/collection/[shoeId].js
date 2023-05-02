@@ -3,24 +3,29 @@ import Product from "../../components/detailPage/Product";
 import { data } from "../../data";
 
 export default function ShoeID(props) {
+
     return (
         <div>
-            <Path/>
-            <Product shoe={props.shoe}/>
+            <Path />
+            <Product shoe={props.shoe} />
         </div>
-    )
-}
+    );
+};
 
 export async function getStaticPaths() {
     return {
-        paths: data.map(d => ({params: {shoeId: d.id}})),
+        paths: data.map(d => ({ params: { shoeId: d.id } })),
         fallback: true
-    }
-}
+    };
+};
 
 export async function getStaticProps(context) {
+    //grab shoeId from url
     const shoeId = context.params.shoeId;
-    const fetchedShoe = data.find(shoe => shoe.id === shoeId)
+
+    //grab shoe from data based on shoeId
+    const fetchedShoe = data.find(shoe => shoe.id === shoeId);
+
     return {
         props: {
             shoe: {
@@ -30,5 +35,5 @@ export async function getStaticProps(context) {
                 id: fetchedShoe.id,
             }
         }
-    }
-}
+    };
+};
