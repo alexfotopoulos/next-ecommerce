@@ -1,12 +1,19 @@
 import Button1 from "../utilities/buttons/Button1";
 import styles from "./Product.module.scss";
 import { useState } from "react";
+import { cartActions } from "@/store/CartSlice";
+import { useDispatch } from "react-redux";
 
 export default function Product(props) {
     //create state for which image will be primary image at a given moment
     const [primaryImage, setPrimaryImage] = useState(props.shoe.images[0]);
     //create state for current quantity of shoe selected
     const [quantity, setQuantity] = useState(0);
+    //create state for current size of shoe selected
+    const [size, setSize] = useState(8);
+
+    //initialize useDispatch
+    const dispatch = useDispatch();
 
     //handler function to set primary image as user clicks through alternate images
     function changeImageHandler(imageNumber) {
@@ -15,6 +22,8 @@ export default function Product(props) {
 
     //handler function to increment shoe quantity by one
     function incrementQtyHandler() {
+        //if quantity is already 10, return
+        if (quantity === 10) return;
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 
@@ -25,9 +34,34 @@ export default function Product(props) {
         setQuantity(prevQuantity => prevQuantity - 1);
     };
 
+    //function to handle size change
+    function sizeChangeHandler(e) {
+        setSize(e.target.value)
+    };
+
     //handler function to handle submit
     function submitHandler(e) {
         e.preventDefault();
+        //if quantity is not selected alert and return
+        if (quantity <= 0) {
+            alert("Please select quantity");
+            return;
+        };
+        //if size is not selected alert and return
+        if (!size) {
+            alert("Please select size");
+            return;
+        };
+        //dispatch action to add item to cart
+        dispatch(cartActions.addToCart({
+            title: props.shoe.title,
+            price: props.shoe.price,
+            quantity,
+            size,
+        }));
+        //reset size and quantity
+        setQuantity(0);
+        setSize(8);
     };
 
     return (
@@ -60,7 +94,7 @@ export default function Product(props) {
                     <div>
                         <label htmlFor="size">Size:</label>
                         <br />
-                        <select name="size" id="size">
+                        <select onChange={sizeChangeHandler} value={size} name="size" id="size">
                             <option disabled value="Please select a size">Please select a size</option>
                             <option value="8">8</option>
                             <option value="8.5">8.5</option>
@@ -78,7 +112,7 @@ export default function Product(props) {
                         <label htmlFor="quantity">Quantity:</label>
                         <div className={styles.Quantity}>
                             <div className={styles.QuantityButton} onClick={decrementQtyHandler}>-</div>
-                            <input className={styles.QuantityInput} type="number" id="quantity" min="0" max="10" defaultValue={quantity} />
+                            <input className={styles.QuantityInput} type="number" id="quantity" value={quantity} readOnly/>
                             <div className={styles.QuantityButton} onClick={incrementQtyHandler}>+</div>
                         </div>
                     </div>

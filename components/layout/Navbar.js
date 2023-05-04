@@ -3,6 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import NavDrawer from "./NavDrawer";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import CartModal from "../cart/CartModal";
 
 export default function Navbar() {
     //state to determine if navbar should be smaller width as user scrolls down
@@ -36,7 +37,7 @@ export default function Navbar() {
             <NavDrawer />
             <Link href="/" className={styles.brand}><div>KICKSTOP</div></Link>
             <div>
-                <ShoppingCartOutlinedIcon className={styles.cartIcon} />
+                <CartModal />
             </div>
         </nav>
     );

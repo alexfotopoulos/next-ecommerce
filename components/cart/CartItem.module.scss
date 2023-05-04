@@ -1,0 +1,11 @@
+.CartItem {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.CartItemDetails {
+    text-align: end;
+}
