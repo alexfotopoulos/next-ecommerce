@@ -22,8 +22,6 @@ export default function Product(props) {
 
     //handler function to increment shoe quantity by one
     function incrementQtyHandler() {
-        //if quantity is already 10, return
-        if (quantity === 10) return;
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 

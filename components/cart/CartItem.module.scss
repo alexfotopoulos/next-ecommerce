@@ -1,11 +1,57 @@
 .CartItem {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.CartItemSection1 {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+}
+
+.CartQuantitySection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .CartItemDetails {
     text-align: end;
+}
+
+.Quantity {
+    height: 3rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.QuantityButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: .5px solid grey;
+    width: 3.5rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.QuantityInput {
+    height: 100%;
+    width: 6rem;
+    border-top: .5px solid grey;
+    border-bottom: .5px solid grey;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+.removeItem {
+    margin-top: 1rem;
+}
+
+.removeItem:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
