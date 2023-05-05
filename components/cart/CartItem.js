@@ -7,7 +7,6 @@ export default function CartItem(props) {
     const cartItems = useSelector(state => state.cart.items);
     //exrtact quantity from redux
     const item = cartItems.find(shoe => shoe.title === props.title);
-    console.log(item);
     const quantity = item.size[props.size].qty;
 
     //initialize useDispatch
@@ -20,13 +19,7 @@ export default function CartItem(props) {
 
     //handler function to increment shoe quantity by one
     function decrementQtyHandler() {
-        //if quantity is 1, remove item from cart
-        if (quantity === 1) {
-            dispatch(cartActions.removeCartItem({ size: props.size, title: props.title }));
-        } else {
-            //otherwise, decrement quantity by one
-            dispatch(cartActions.decrementCartItem({ size: props.size, title: props.title }));
-        };
+        dispatch(cartActions.decrementCartItem({ size: props.size, title: props.title }));
     };
 
     //handler function to remove item

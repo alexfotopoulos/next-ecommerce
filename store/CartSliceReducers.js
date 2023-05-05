@@ -23,7 +23,6 @@ export function addToCart(state, action) {
         };
         //add new shoe object to state.items array
         state.items = [...state.items, newItem];
-        console.log(state.items)
     };
     //add new shoe quantity to totalQuantity 
     state.totalQuantity = state.totalQuantity + action.payload.quantity;
@@ -50,8 +49,16 @@ export function decrementCartItem(state, action) {
         //decrement qty by one
         existingShoe.size[action.payload.size].qty = existingShoe.size[action.payload.size].qty - 1;
     } else {
-        //if amount is one, remove item
-        state.items = state.items.filter(item => item.title !== action.payload.title);
+        //create array from keys of existingShoe.size
+        let keys = Object.keys(existingShoe.size);
+        //if there is more than one size
+        if (keys.length > 1) {
+            //delete key value pair from size object
+            delete existingShoe.size[action.payload.size];
+        } else {
+            //if there is only one size, delete existingShoe from state.items
+            state.items = state.items.filter(item => item.title !== action.payload.title);
+        };
     };
     //decrement totalQuantity by one
     state.totalQuantity = state.totalQuantity - 1;
@@ -62,12 +69,18 @@ export function decrementCartItem(state, action) {
 export function removeCartItem(state, action) {
     //find existing shoe in cart items to decrement and note quantity to be removed and price
     let existingShoe = state.items.find(item => item.title === action.payload.title);
-    // let quantityToBeRemoved = existingShoe.size[action.payload.size].qty;
-    // let price = existingShoe.price;
     //remove shoe quantity from totalQuantity
     state.totalQuantity = state.totalQuantity - existingShoe.size[action.payload.size].qty;
     //deduct shoe price to subtotal
     state.subtotal = state.subtotal - (existingShoe.size[action.payload.size].qty * existingShoe.price);
-    //remove item from cart
-    state.items = state.items.filter(item => item.title !== action.payload.title);
+    //create array from keys of existingShoe.size
+    let keys = Object.keys(existingShoe.size);
+    //if there is more than one size
+    if (keys.length > 1) {
+        //delete key value pair from size object
+        delete existingShoe.size[action.payload.size];
+    } else {
+        //if there is only one size, delete existingShoe from state.items
+        state.items = state.items.filter(item => item.title !== action.payload.title);
+    };
 };
