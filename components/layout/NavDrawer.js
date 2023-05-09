@@ -56,31 +56,31 @@ export default function NavDrawer() {
             >
                 <ListItemButton>
                     <Link href="/collection">
-                        <div onClick={toggleDrawer(anchor, false)}>Just Dropped</div>
+                        <div  className={styles.NavDrawerListItem} onClick={toggleDrawer(anchor, false)}>Just Dropped</div>
                     </Link>
                 </ListItemButton>
                 <ListItemButton onClick={toggleDrawer(anchor, false)}>
-                        <div onClick={handleOpen}>Shopping Cart</div>
+                        <div  className={styles.NavDrawerListItem} onClick={handleOpen}>Shopping Cart</div>
                 </ListItemButton>
                 <ListItemButton onClick={handleClick}>
-                    <div>Customer Support</div>
+                    <div className={styles.NavDrawerListItem} >Customer Support</div>
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <Link href="#" onClick={toggleDrawer(anchor, false)}>
-                                <div>About Us</div>
+                                <div className={styles.NavDrawerListItem} >About Us</div>
                             </Link>
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <Link href="#" onClick={toggleDrawer(anchor, false)}>
-                                <div>Contact Us</div>
+                                <div className={styles.NavDrawerListItem} >Contact Us</div>
                             </Link>
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <Link href="#" onClick={toggleDrawer(anchor, false)}>
-                                <div>Track Order</div>
+                                <div className={styles.NavDrawerListItem} >Track Order</div>
                             </Link>
                         </ListItemButton>
                     </List>

@@ -22,3 +22,15 @@
 .FooterLink:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 40rem) {
+    .Footer {
+        padding: $padding-medium;
+        flex-direction: column;
+        font-size: $font-size-default;
+
+        & h3 {
+            font-size: $font-size-default;
+        }
+    }
+}

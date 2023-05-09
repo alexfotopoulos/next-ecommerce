@@ -18,12 +18,19 @@
     margin: $margin-small;
 }
 
-.navDrawerListItem {
-    font-size: $font-size-medium;
-    padding-left: $padding-large;
+.NavDrawerListItem {
+    font-size: $font-size-default;
+    padding-left: $padding-medium;
 }
 
 .navDrawerButton {
     font-size: $font-size-medium;
     color: black;
+}
+
+@media (max-width: 60rem) {
+    .NavDrawerListItem {
+        font-size: $font-size-default;
+        padding-left: $padding-small;
+    }
 }

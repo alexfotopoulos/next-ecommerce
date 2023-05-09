@@ -17,3 +17,25 @@
     grid-row-gap: 3rem; 
     justify-items: center;
 }
+
+@media (max-width: 60rem) {
+    .SneakerContainer {
+        width: 95%;
+        margin: 0 auto $margin-large;
+    }
+
+    .SneakerContainerTitle {
+        font-size: $font-size-medium;
+    }
+
+    .SneakerGrid {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+
+    .SneakerContainerTitle {
+        margin-left: $margin-small;
+        margin-right: $margin-small;
+    }
+}

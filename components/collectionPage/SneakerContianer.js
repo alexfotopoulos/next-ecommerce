@@ -9,7 +9,7 @@ export default function SneakerContainer() {
 
     return (
         <div className={styles.SneakerContainer}>
-            <Path />
+            <Path/>
             <h1 className={styles.SneakerContainerTitle}>Just Dropped</h1>
             <div className={styles.SneakerGrid}>
                 {shoes.map(shoe => <SneakerTile key={shoe.id} {...shoe} />)}

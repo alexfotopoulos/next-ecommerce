@@ -13,3 +13,10 @@
     width: 90%;
     flex: 1 0 auto;
 }
+
+@media (max-width: 60rem) {
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+}

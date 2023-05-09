@@ -5,3 +5,9 @@
     color: rgb(147, 147, 147);
     padding-bottom: $margin-small;
 }
+
+@media (max-width: 60rem) {
+    .Path {
+        margin-left: $margin-small;
+    }
+}

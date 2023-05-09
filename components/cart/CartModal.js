@@ -71,7 +71,7 @@ export default function CartModal() {
                 <CartBubble />
             </Button>
             <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-                <Box sx={style}>
+                <Box sx={style} className={styles.CartModal}>
                     {content}
                 </Box>
             </Modal>

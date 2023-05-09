@@ -6,3 +6,9 @@
     letter-spacing: .1rem;
     text-align: center;
 }
+
+@media (max-width: 60rem) {
+    .Mission {
+        width: 90%;
+    }
+}
