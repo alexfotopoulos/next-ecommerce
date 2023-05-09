@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addToCart, incrementCartItem, decrementCartItem, removeCartItem } from "./CartSliceReducers";
+import { addToCart, incrementCartItem, decrementCartItem, removeCartItem, openModal, hideModal } from "./CartSliceReducers";
 
 // what items would like like
 // items: [
@@ -22,7 +22,8 @@ import { addToCart, incrementCartItem, decrementCartItem, removeCartItem } from 
 const initialState = {
     items: [],
     totalQuantity: 0,
-    subtotal: 0
+    subtotal: 0,
+    open: false
 };
 
 //create cart slice
@@ -33,7 +34,9 @@ const CartSlice = createSlice({
         addToCart,
         incrementCartItem,
         decrementCartItem,
-        removeCartItem
+        removeCartItem,
+        openModal,
+        hideModal
     }
 });
 

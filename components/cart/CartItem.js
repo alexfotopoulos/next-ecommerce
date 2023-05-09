@@ -40,7 +40,6 @@ export default function CartItem(props) {
                     <span>${props.price}</span>
                 </div>
             </div>
-            <p>Quantity</p>
             <div className={styles.CartQuantitySection}>
                 <div className={styles.Quantity}>
                     <div className={styles.QuantityButton} onClick={decrementQtyHandler}>-</div>

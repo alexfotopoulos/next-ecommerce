@@ -4,9 +4,10 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import styles from "./CartModal.module.scss";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import CartItem from "./CartItem";
 import CartBubble from './CartBubble';
+import { cartActions } from '@/store/CartSlice';
 
 const style = {
     position: 'absolute',
@@ -21,19 +22,21 @@ const style = {
 };
 
 export default function CartModal() {
-    //state to toggle modal open or closed
-    const [open, setOpen] = React.useState(false);
-
-    //functions to open/close modal
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
     //grab cart items from redux
     const cartItems = useSelector(state => state.cart.items);
     //grab subtotal from redux
     const subtotal = useSelector(state => state.cart.subtotal);
     //grab total items from redux
     const totalQuantity = useSelector(state => state.cart.totalQuantity);
+    //grab modal state from redux
+    const open = useSelector(state => state.cart.open);
+
+    //initialize dispatch
+    const dispatch = useDispatch();
+
+    //hander functions to open/close modal
+    const handleOpen = () => dispatch(cartActions.openModal());
+    const handleClose = () => dispatch(cartActions.hideModal());
 
     //define cart content based on if there are items in the cart
     let content;

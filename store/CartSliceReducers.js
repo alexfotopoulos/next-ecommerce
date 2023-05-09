@@ -84,3 +84,13 @@ export function removeCartItem(state, action) {
         state.items = state.items.filter(item => item.title !== action.payload.title);
     };
 };
+
+export function openModal(state) {
+    //shoe modal
+    state.open = true;
+};
+
+export function hideModal(state) {
+    //hide modal
+    state.open = false;
+};
