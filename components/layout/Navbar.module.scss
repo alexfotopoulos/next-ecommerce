@@ -1,8 +1,8 @@
 @import "../../styles/sass/abstracts/variables";
 
 .Navbar {
-    font-size: $font-size-m;
-    padding: 2rem 5rem;
+    font-size: $font-size-medium;
+    padding: $padding-small $padding-large;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,8 +13,8 @@
 }
 
 .smallerNavbar {
-    font-size: $font-size-m;
-    padding: .5rem 5rem;
+    font-size: $font-size-medium;
+    padding: $padding-xsmall;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,12 +25,12 @@
 }
 
 .brand {
-    font-size: $font-size-xl;
+    font-size: $font-size-xlarge;
     font-family: 'Bruno Ace SC', cursive;
     text-decoration: none;
     color: black;
 }
 
 .cartIcon {
-    font-size: 2.5rem;
+    font-size: $font-size-medium;
 }

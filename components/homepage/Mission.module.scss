@@ -1,6 +1,8 @@
+@import "../../styles/sass/abstracts/variables";
+
 .Mission {
     width: 60%;
-    margin: 5rem auto;
+    margin: $margin-large auto;
     letter-spacing: .1rem;
     text-align: center;
 }

@@ -1,7 +1,7 @@
 @import "../../styles/sass/abstracts/variables";
 
 .Footer {
-    padding: 2rem 7rem;
+    padding: $padding-medium 7rem;
     background-color: #333;
     color: white;
     display: flex;
@@ -9,14 +9,14 @@
 }
 
 .Footer h3 {
-    font-size: $font-size-m;
-    margin-bottom: $margin-bottom-small;
+    font-size: $font-size-medium;
+    margin-bottom: $margin-small;
     text-decoration: underline;
 }
 
 .Footer div:not(:last-child) {
     font-size: $font-size-default;
-    margin-bottom: $margin-bottom-small;
+    margin-bottom: $margin-small;
 }
 
 .FooterLink:hover {

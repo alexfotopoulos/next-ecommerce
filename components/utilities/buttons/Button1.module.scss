@@ -2,7 +2,7 @@
 
 .Button1 {
     font-size: $font-size-default;
-    padding: 1.5rem 4rem;
+    padding: $padding-medium $padding-xlarge;
     background-color: transparent;
     border: 1px solid black;
     transition: .2s all
