@@ -37,6 +37,14 @@
 }
 
 @media (max-width: 40rem) {
+    .Navbar {
+        padding: $padding-small;
+    }
+
+    .smallerNavbar {
+        padding: $padding-small;
+    }
+    
     .brand {
         font-size: $font-size-default;
     }

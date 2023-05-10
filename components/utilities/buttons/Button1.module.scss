@@ -2,10 +2,11 @@
 
 .Button1 {
     font-size: $font-size-default;
+    color: black;
     padding: $padding-medium $padding-xlarge;
     background-color: transparent;
     border: 1px solid black;
-    transition: .2s all
+    transition: .2s all;
 }
 
 .Button1:hover {

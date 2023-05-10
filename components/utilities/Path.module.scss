@@ -8,6 +8,8 @@
 
 @media (max-width: 60rem) {
     .Path {
+        font-size: $font-size-default;
+        margin-top: $margin-small;
         margin-left: $margin-small;
     }
 }

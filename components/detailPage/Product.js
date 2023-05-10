@@ -65,6 +65,10 @@ export default function Product(props) {
     return (
         <div className={styles.Product}>
             <div className={styles.ProductSection1}>
+                <div className={styles.MobileHeading}>
+                    <h2 className={styles.ProductTitle}>{props.shoe.title}</h2>
+                    <h3 className={styles.ProductPrice}>${props.shoe.price}</h3>
+                </div>
                 <img className={styles.ProductImage}
                     src={primaryImage}
                     alt={props.shoe.title} />
@@ -84,7 +88,7 @@ export default function Product(props) {
                 </div>
             </div>
             <div className={styles.ProductSection2}>
-                <div>
+                <div className={styles.DesktopHeading}>
                     <h2 className={styles.ProductTitle}>{props.shoe.title}</h2>
                     <h3 className={styles.ProductPrice}>${props.shoe.price}</h3>
                 </div>
@@ -110,7 +114,7 @@ export default function Product(props) {
                         <label htmlFor="quantity">Quantity:</label>
                         <div className={styles.Quantity}>
                             <div className={styles.QuantityButton} onClick={decrementQtyHandler}>-</div>
-                            <input className={styles.QuantityInput} type="number" id="quantity" value={quantity} readOnly/>
+                            <input className={styles.QuantityInput} type="number" id="quantity" value={quantity} readOnly />
                             <div className={styles.QuantityButton} onClick={incrementQtyHandler}>+</div>
                         </div>
                     </div>
