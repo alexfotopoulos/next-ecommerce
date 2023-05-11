@@ -80,4 +80,10 @@
         border-right: none;
         text-align: center;
     }
+
+    .CartQuantitySection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

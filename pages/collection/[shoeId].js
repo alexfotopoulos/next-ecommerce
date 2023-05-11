@@ -15,7 +15,7 @@ export default function ShoeID(props) {
 export async function getStaticPaths() {
     return {
         paths: data.map(d => ({ params: { shoeId: d.id } })),
-        fallback: true
+        fallback: false
     };
 };
 
