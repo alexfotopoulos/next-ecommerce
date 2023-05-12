@@ -46,7 +46,7 @@ export default function NavDrawer() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <div className={styles.navDrawerHeading}>
-                <MenuIcon className={styles.navDrawerButtonMenu} />
+                <MenuIcon sx={{color: "black", fontSize: "2.5rem", marginLeft: "1rem"}} />
                 <div className={styles.navDrawerTitle}>Menu</div>
             </div>
             <hr />
@@ -94,7 +94,7 @@ export default function NavDrawer() {
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button onClick={toggleDrawer(anchor, true)}>
-                        <MenuIcon className={styles.navDrawerButton} />
+                        <MenuIcon sx={{color: "black", fontSize: "2.5rem"}} />
                     </Button>
                     <Drawer
                         anchor={anchor}
