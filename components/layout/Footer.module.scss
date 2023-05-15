@@ -11,7 +11,7 @@
 .Footer h3 {
     font-size: $font-size-medium;
     margin-bottom: $margin-small;
-    text-decoration: underline;
+    font-weight: 100;
 }
 
 .Footer div:not(:last-child) {
@@ -28,9 +28,13 @@
         padding: $padding-medium;
         flex-direction: column;
         font-size: $font-size-default;
-
+        
         & h3 {
             font-size: $font-size-default;
         }
+    }
+    
+    .FooterSection:not(:nth-of-type(3)) {
+        margin-bottom: $margin-medium;
     }
 }

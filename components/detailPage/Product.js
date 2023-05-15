@@ -66,8 +66,8 @@ export default function Product(props) {
         <div className={styles.Product}>
             <div className={styles.ProductSection1}>
                 <div className={styles.MobileHeading}>
-                    <h2 className={styles.ProductTitle}>{props.shoe.title}</h2>
-                    <h3 className={styles.ProductPrice}>${props.shoe.price}</h3>
+                    <h1 className={styles.ProductTitle}>{props.shoe.title}</h1>
+                    <h2 className={styles.ProductPrice}>${props.shoe.price}</h2>
                 </div>
                 <img className={styles.ProductImage}
                     src={primaryImage}
@@ -89,8 +89,8 @@ export default function Product(props) {
             </div>
             <div className={styles.ProductSection2}>
                 <div className={styles.DesktopHeading}>
-                    <h2 className={styles.ProductTitle}>{props.shoe.title}</h2>
-                    <h3 className={styles.ProductPrice}>${props.shoe.price}</h3>
+                    <h1 className={styles.ProductTitle}>{props.shoe.title}</h1>
+                    <h2 className={styles.ProductPrice}>${props.shoe.price}</h2>
                 </div>
                 <form className={styles.ProductForm} onSubmit={submitHandler}>
                     <div>
