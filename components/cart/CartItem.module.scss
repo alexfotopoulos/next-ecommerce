@@ -6,6 +6,11 @@
     padding-bottom: $padding-small;
 }
 
+.CartItemTitle h4 {
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
 .CartItemSection1 {
     display: flex;
     justify-content: space-between;
